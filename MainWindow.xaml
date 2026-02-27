@@ -5,8 +5,136 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warriors_Shihova"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+            Title="MainWindow" Height="450" Width="800" MinHeight="500" MinWidth="800">
+    <Grid Background="#2D2D2D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#1E1E1E" Padding="10">
+            <TextBlock Text="Виртуальные методы. Битва воинов" 
+                   Foreground="White" 
+                   FontSize="20" 
+                   HorizontalAlignment="Center"/>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Background="#3D3D3D" Margin="5" CornerRadius="10" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Обычный воин" 
+                           Foreground="White" 
+                           FontSize="18" 
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+                    <Canvas x:Name="WarriorCanvas" 
+                        Width="200" 
+                        Height="200" 
+                        Background="#2A2A2A"
+                        Margin="0,0,0,10"/>
+                    <TextBlock x:Name="WarriorHealthText" 
+                           Text="Жизни: 100" 
+                           Foreground="White" 
+                           FontSize="16" 
+                           HorizontalAlignment="Center"
+                           Margin="0,5"/>
+                    <Slider x:Name="WarriorDamageSlider" 
+                        Minimum="5" 
+                        Maximum="30" 
+                        Value="15" 
+                        TickFrequency="5" 
+                        TickPlacement="BottomRight"
+                        Margin="5"/>
+                    <Button x:Name="WarriorTakeDamageBtn" 
+                        Content="Нанести урон" 
+                        Background="White"
+                        Padding="10,5"
+                        Margin="5,10"
+                        Click="WarriorTakeDamageBtn_Click"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Background="#3D3D3D" Margin="5" CornerRadius="10" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Воин в легких доспехах" 
+                           Foreground="White" 
+                           FontSize="18" 
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+                    <Canvas x:Name="LightWarriorCanvas" 
+                        Width="200" 
+                        Height="200" 
+                        Background="#2A2A2A"
+                        Margin="0,0,0,10"/>
+                    <TextBlock x:Name="LightWarriorHealthText" 
+                           Text="Жизни: 100" 
+                           Foreground="White" 
+                           FontSize="16" 
+                           HorizontalAlignment="Center"
+                           Margin="0,5"/>
+                    <Slider x:Name="LightWarriorDamageSlider" 
+                        Minimum="5" 
+                        Maximum="30" 
+                        Value="15" 
+                        TickFrequency="5" 
+                        TickPlacement="BottomRight"
+                        Margin="5"/>
+                    <Button x:Name="LightWarriorTakeDamageBtn" 
+                        Content="Нанести урон" 
+                        Background="White"
+                        Padding="10,5"
+                        Margin="5,10"
+                        Click="LightWarriorTakeDamageBtn_Click"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="2" Background="#3D3D3D" Margin="5" CornerRadius="10" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Воин в тяжелых доспехах" 
+                           Foreground="white" 
+                           FontSize="18" 
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+                    <Canvas x:Name="HeavyWarriorCanvas" 
+                        Width="200" 
+                        Height="200" 
+                        Background="#2A2A2A"
+                        Margin="0,0,0,10"/>
+                    <TextBlock x:Name="HeavyWarriorHealthText" 
+                           Text="Жизни: 100" 
+                           Foreground="White" 
+                           FontSize="16" 
+                           HorizontalAlignment="Center"
+                           Margin="0,5"/>
+                    <Slider x:Name="HeavyWarriorDamageSlider" 
+                        Minimum="5" 
+                        Maximum="30" 
+                        Value="15" 
+                        TickFrequency="5" 
+                        TickPlacement="BottomRight"
+                        Margin="5"/>
+                    <Button x:Name="HeavyWarriorTakeDamageBtn" 
+                        Content="Нанести урон" 
+                        Background="White"
+                        Padding="10,5"
+                        Margin="5,10"
+                        Click="HeavyWarriorTakeDamageBtn_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Border Grid.Row="2" Background="#1E1E1E" Padding="10">
+            <TextBlock x:Name="InfoTextBlock" 
+                   Text="Выберите воина и нанесите урон. Обратите внимание: урон поглощается по-разному!" 
+                   Foreground="LightGray" 
+                   FontSize="14" 
+                   TextWrapping="Wrap"/>
+        </Border>
     </Grid>
 </Window>
